@@ -5,11 +5,14 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>FastInject</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Authors>IDjinn</Authors>
         <Company>IDjinn</Company>
         <PackageReadmeFile>Readme.md</PackageReadmeFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Easy and fast way to inject your services into DI container of your application.</Description>
+        <PackageProjectUrl>https://github.com/IDjinn/FastInject</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/IDjinn/FastInject</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>

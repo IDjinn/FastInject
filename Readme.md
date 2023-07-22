@@ -1,6 +1,6 @@
 # FastInject
 
-Easy and fast way to inejct your services into DI container of your application.
+Easy and fast way to inject your services into DI container of your application.
 
 ### How to use it
 
