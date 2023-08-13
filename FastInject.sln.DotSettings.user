@@ -4,9 +4,9 @@
     &lt;TestId&gt;xUnit::9EAB2D42-C764-4E81-9EF1-E7382D3C1A9A::net7.0::FastInject.Tests.InjectionTestings&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6505cc6a_002D1fba_002D4320_002Dbc1a_002Dbd7197c2ef70/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="test_injection #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6505cc6a_002D1fba_002D4320_002Dbc1a_002Dbd7197c2ef70/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="test_injection #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::9EAB2D42-C764-4E81-9EF1-E7382D3C1A9A::net7.0::FastInject.Tests.InjectionTestings.test_injection&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9EAB2D42-C764-4E81-9EF1-E7382D3C1A9A::net7.0::FastInject.Tests.InjectionTestings&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6c38395e_002D7d93_002D42fb_002Da84a_002D2a475a0e22f6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="InjectionTestings" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -39,8 +39,8 @@
     &lt;TestId&gt;xUnit::9EAB2D42-C764-4E81-9EF1-E7382D3C1A9A::net7.0::FastInject.Tests.InjectionTestings&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fab0dffc_002D8687_002D49f5_002D8911_002D8c9b84f79420/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="test_injection" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fab0dffc_002D8687_002D49f5_002D8911_002D8c9b84f79420/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="test_injection" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::9EAB2D42-C764-4E81-9EF1-E7382D3C1A9A::net7.0::FastInject.Tests.InjectionTestings.test_injection&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9EAB2D42-C764-4E81-9EF1-E7382D3C1A9A::net7.0::FastInject.Tests.InjectionTestings&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

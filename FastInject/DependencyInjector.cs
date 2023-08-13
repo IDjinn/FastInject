@@ -21,10 +21,10 @@ public static class DependencyInjector
 
         foreach (var type in typesToInject)
         {
-            var @interface = (extraTypesToInject.Length > 0
-                    ? type.GetInterfaces().FirstOrDefault(extraTypesToInject.Contains)
-                    : type.GetInterfaces().FirstOrDefault(inter => inter.Name.Contains(type.Name))
-                ) ?? type.GetInterfaces().FirstOrDefault();
+            var @interface =
+                type.GetInterfaces().FirstOrDefault(inter => inter.Name.Contains(type.Name))
+                ?? type.GetInterfaces().FirstOrDefault(extraTypesToInject.Contains)
+                ?? type.GetInterfaces().FirstOrDefault();
 
             if (@interface is null) continue;
             var injectAttribute = type.GetCustomAttributes<InjectAttribute>().FirstOrDefault()?.Lifetime ??
