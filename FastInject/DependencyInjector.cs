@@ -21,27 +21,31 @@ public static class DependencyInjector
 
         foreach (var type in typesToInject)
         {
-            var @interface =
-                type.GetInterfaces().FirstOrDefault(inter => inter.Name.Contains(type.Name))
-                ?? type.GetInterfaces().FirstOrDefault(extraTypesToInject.Contains)
-                ?? type.GetInterfaces().FirstOrDefault();
+            var interfaces = new List<Type>();
+            interfaces.AddRange(type.GetInterfaces().Where(inter => inter.Name.Contains(type.Name)));
+            interfaces.AddRange(type.GetInterfaces().Where(extraTypesToInject.Contains));
+            if (!interfaces.Any() && type.GetInterfaces().FirstOrDefault() is not null)
+                interfaces.Add(type.GetInterfaces().FirstOrDefault()!);
 
-            if (@interface is null) continue;
+            if (!interfaces.Any()) continue;
             var injectAttribute = type.GetCustomAttributes<InjectAttribute>().FirstOrDefault()?.Lifetime ??
                                   ServiceLifetime.Singleton;
-            switch (injectAttribute)
+            foreach (var @interface in interfaces)
             {
-                case ServiceLifetime.Scoped:
-                    services.AddScoped(@interface, type);
-                    break;
+                switch (injectAttribute)
+                {
+                    case ServiceLifetime.Scoped:
+                        services.AddScoped(@interface, type);
+                        break;
 
-                case ServiceLifetime.Singleton:
-                    services.AddSingleton(@interface, type);
-                    break;
+                    case ServiceLifetime.Singleton:
+                        services.AddSingleton(@interface, type);
+                        break;
 
-                case ServiceLifetime.Transient:
-                    services.AddTransient(@interface, type);
-                    break;
+                    case ServiceLifetime.Transient:
+                        services.AddTransient(@interface, type);
+                        break;
+                }
             }
         }
 

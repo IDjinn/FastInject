@@ -23,4 +23,15 @@ public class InjectionTestings
         var provider = services.BuildServiceProvider();
         Assert.NotNull(provider.GetService<IOtherInjectable>());
     }
+
+    [Fact]
+    public void test_injection_and_custom_interface()
+    {
+        var services = new ServiceCollection();
+        services.InjectAllFromRootType(typeof(InjectionTestings), typeof(IOtherInterface));
+
+        var provider = services.BuildServiceProvider();
+        Assert.NotNull(provider.GetService<IOtherInjectable>());
+        Assert.NotNull(provider.GetService<IOtherInterface>());
+    }
 }
