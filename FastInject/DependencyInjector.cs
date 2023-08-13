@@ -8,22 +8,27 @@ namespace FastInject;
 [SuppressMessage("ReSharper", "SwitchStatementHandlesSomeKnownEnumValuesWithDefault")]
 public static class DependencyInjector
 {
-    public static IServiceCollection InjectAllFromRootType(this IServiceCollection services, Type rootType)
+    public static IServiceCollection InjectAllFromRootType(
+        this IServiceCollection services,
+        Type rootType,
+        params Type[] extraTypesToInject
+    )
     {
         ArgumentNullException.ThrowIfNull(rootType);
-
         var typesToInject = rootType.Assembly.GetTypes()
-            .Where(type => type.GetCustomAttributes<InjectAttribute>().Any());
+            .Where(type => type.GetCustomAttributes<InjectAttribute>().Any() ||
+                           type.GetInterfaces().Any(extraTypesToInject.Contains));
+
         foreach (var type in typesToInject)
         {
-            if (type.IsInterface) continue;
+            var @interface = extraTypesToInject.Length > 0
+                ? type.GetInterfaces().FirstOrDefault(extraTypesToInject.Contains)
+                : type.GetInterfaces().FirstOrDefault(inter => inter.Name.Contains(type.Name));
 
-            var @interface = type.GetInterfaces().FirstOrDefault(inter => inter.Name.Contains(type.Name)) ??
-                             type.GetInterfaces().FirstOrDefault();
             if (@interface is null) continue;
-
-            var injectAttribute = type.GetCustomAttributes<InjectAttribute>().FirstOrDefault();
-            switch (injectAttribute?.Lifetime)
+            var injectAttribute = type.GetCustomAttributes<InjectAttribute>().FirstOrDefault()?.Lifetime ??
+                                  ServiceLifetime.Singleton;
+            switch (injectAttribute)
             {
                 case ServiceLifetime.Scoped:
                     services.AddScoped(@interface, type);
